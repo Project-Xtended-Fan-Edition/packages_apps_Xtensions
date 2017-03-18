@@ -22,6 +22,15 @@
                 <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </com.android.settings.preferences.EverestPreference>
 
+        <!-- Bluetooth battery status -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            settings:position="middle"
+            android:icon="@drawable/ic_battery_bluetooth"
+            android:title="@string/status_bar_bluetooth_battery_title"
+            android:summary="@string/status_bar_bluetooth_battery_summary"
+            android:defaultValue="true" />
+
         <!-- Colored icons -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="statusbar_colored_icons"
