@@ -109,6 +109,14 @@
             android:defaultValue="false"
             android:fragment="com.android.tweaks.fragments.statusbar.StatusBarLogo" />
 
+        <com.android.settings.preferences.EverestPreference
+            android:key="carrier_label"
+            settings:position="middle"
+            android:icon="@drawable/ic_carrierlabel"
+            android:fragment="com.android.tweaks.fragments.themes.CarrierLabel"
+            android:title="@string/carrier_label_category"
+            android:summary="@string/carrier_label_summary" />
+
         <!-- Quick pull down -->
         <lineageos.preference.LineageSystemSettingListPreference
             android:key="qs_quick_pulldown"
