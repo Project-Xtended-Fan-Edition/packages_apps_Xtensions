@@ -12,10 +12,18 @@
         android:key="lock_screen_interface_category"
         android:title="@string/lock_screen_interface_category">
 
+        <com.android.settings.preferences.EverestPreference
+            android:key="pulse_settings"
+            settings:position="top"
+            android:icon="@drawable/ic_pulse"
+            android:title="@string/lock_screen_pulse_settings_title"
+            android:summary="@string/lock_screen_pulse_settings_summary"
+            android:fragment="com.android.tweaks.fragments.lockscreen.PulseSettings" />
+
         <!-- Charging stats -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
-            settings:position="top"
+            settings:position="middle"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lock_screen_charging_stats_title"
             android:summary="@string/lock_screen_charging_stats_summary"
