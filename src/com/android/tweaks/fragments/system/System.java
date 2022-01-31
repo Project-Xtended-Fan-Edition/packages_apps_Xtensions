@@ -21,6 +21,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
+import lineageos.providers.LineageSettings;
+
 import java.util.List;
 
 @SearchIndexable

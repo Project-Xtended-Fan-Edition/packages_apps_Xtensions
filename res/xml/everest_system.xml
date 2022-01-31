@@ -9,6 +9,20 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="advanced_backup_key"
+        android:title="@string/advanced_backup_title">
+
+        <lineageos.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gphotos"
+            settings:position="full"
+            android:icon="@drawable/ic_backup"
+            android:title="@string/unlimited_photos_storage_title"
+            android:summary="@string/unlimited_photos_storage_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/system_category">
 
         <com.android.settings.preferences.EverestPreference
