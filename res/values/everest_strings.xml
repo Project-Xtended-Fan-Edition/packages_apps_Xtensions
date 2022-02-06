@@ -602,4 +602,9 @@
     <!-- Notifications/Less boring heads up -->
     <string name="notifications_less_boring_heads_up_title">Less boring</string>
     <string name="notifications_less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+
+    <!-- Themes -->
+    <string name="themes_animations_category">Animations</string>
+    <string name="themes_charging_animation_title">Charging animation</string>
+    string name="themes_charging_animation_summary">Display an animation when the device is plugged in</string>
 </resources>
