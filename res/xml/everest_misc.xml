@@ -13,8 +13,16 @@
         android:title="@string/general_category">
 
         <com.android.settings.preferences.GlobalSettingSwitchPreference
+            android:key="pm_downgrade_allowed"
+            settings:position="top"
+            android:icon="@drawable/ic_arrow_down_box"
+            android:title="@string/miscellaneous_app_downgrade_title"
+            android:summary="@string/miscellaneous_app_downgrade_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preferences.GlobalSettingSwitchPreference
             android:key="hide_screen_capture_status"
-            settings:position="full"
+            settings:position="bottom"
             android:icon="@drawable/ic_hide"
             android:title="@string/hide_screen_capture_status_title"
             android:summary="@string/hide_screen_capture_status_summary"
