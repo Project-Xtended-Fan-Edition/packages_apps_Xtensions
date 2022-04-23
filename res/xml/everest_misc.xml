@@ -22,11 +22,20 @@
 
         <com.android.settings.preferences.GlobalSettingSwitchPreference
             android:key="hide_screen_capture_status"
-            settings:position="bottom"
+            settings:position="middle"
             android:icon="@drawable/ic_hide"
             android:title="@string/hide_screen_capture_status_title"
             android:summary="@string/hide_screen_capture_status_summary"
             android:defaultValue="false"/>
+
+        <!-- Ignore window secure flags -->
+        <com.android.settings.preferences.GlobalSettingSwitchPreference
+            android:key="window_ignore_secure"
+            settings:position="bottom"
+            android:icon="@drawable/ic_settings_security"
+            android:title="@string/miscellaneous_ignore_window_secure_title"
+            android:summary="@string/miscellaneous_ignore_window_secure_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
