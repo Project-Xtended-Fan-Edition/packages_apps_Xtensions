@@ -55,5 +55,19 @@
             android:defaultValue="1" />
 
     </PreferenceCategory>
+    
+    <!-- Qs battery customizations -->
+    <PreferenceCategory
+        android:title="Battery Extra customization" >
+
+        <!-- Battery styles -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="misc_batterysb"
+            settings:position="full"
+            android:fragment="com.android.tweaks.fragments.MiscBatterySettings"
+            android:title="@string/misc_battery_title"
+            android:summary="customize statusbar battery icon settings" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
