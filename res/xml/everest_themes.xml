@@ -46,10 +46,19 @@
             android:key="themes_icons_category"
             android:title="@string/themes_icons_category">
 
+        <!-- Data icon style -->  
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.customization.sb_data"
+            settings:position="top"
+            android:icon="@drawable/ic_data"
+            android:title="@string/theme_customization_data_title"
+            android:summary="@string/theme_customization_data_summary"
+            android:fragment="com.android.tweaks.fragments.themes.DataStyles"/>
+
         <!-- System icons -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.icon_pack"
-            settings:position="top"
+            settings:position="middle"
             android:icon="@drawable/ic_drawing"
             android:title="@string/themes_system_icons_title"
             android:summary="@string/themes_system_icons_summary"

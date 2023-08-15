@@ -89,6 +89,8 @@
     <string name="themes_wifi_icon_summary">Set Wi-Fi icon style</string>
     <string name="themes_navigation_bar_icons_title">Navigation bar icons</string>
     <string name="themes_navigation_bar_icons_summary">Set navigation bar icon style</string>
+    <string name="theme_customization_data_title">Data icon style</string>
+    <string name="theme_customization_data_summary">Set custom data icon style</string>
 
     <!-- Status bar -->
     <string name="status_bar_icons_category">Icons</string>
