@@ -55,6 +55,14 @@
             android:summary="@string/theme_customization_data_summary"
             android:fragment="com.android.tweaks.fragments.themes.DataStyles"/>
 
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.brightness_slider"
+            settings:position="middle"
+            android:icon="@drawable/ic_brightness"
+            android:title="@string/theme_customization_brightness_slider_title"
+            android:summary="@string/theme_customization_brightness_slider_summary"
+            android:fragment="com.android.tweaks.fragments.themes.BrightnessSlider"/>
+
         <!-- System icons -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.icon_pack"
