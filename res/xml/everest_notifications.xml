@@ -15,11 +15,30 @@
         <!-- Kill app button -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_guts_kill_app_button"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_kill"
             android:title="@string/notifications_kill_app_button_title"
             android:summary="@string/notifications_kill_app_button_summary"
             android:defaultValue="false" />
+
+       <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="notif_panel_custom_notif"
+            settings:position="middle"
+            android:icon="@drawable/ic_numbers"
+            android:title="@string/notif_panel_maxnotif_title"
+            android:summary="@string/notif_panel_maxnotif_summary"
+            android:defaultValue="false" />
+
+       <com.android.settings.preferences.SystemSettingSeekBarPreference
+           android:key="notif_panel_max_notif_cofig"
+           settings:position="bottom"
+           android:icon="@drawable/ic_numbers"
+           android:title="@string/notif_panel_maxnotif_config"
+           android:max="6"
+           settings:min="1"
+           settings:units=""
+           android:persistent="false"
+           android:dependency="notif_panel_custom_notif"/>
     </PreferenceCategory>
 
     <PreferenceCategory
