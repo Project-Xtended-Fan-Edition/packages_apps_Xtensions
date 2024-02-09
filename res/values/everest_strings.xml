@@ -439,4 +439,8 @@
     <string name="lock_screen_fingerprint_success_vibration_summary">Vibrate when fingerprint authentication is successful</string>
     <string name="lock_screen_fingerprint_error_vibration_title">Authentication error vibration</string>
     <string name="lock_screen_fingerprint_error_vibration_summary">Vibrate when fingerprint authentication fails</string>
+
+    <!-- AOSP Gestures -->
+    <string name="aosp_gesture_preference">System Gestures</string>
+    <string name="aosp_gesture_summary">Stock gestures included with AOSP</string>
 </resources>

@@ -54,6 +54,15 @@
             android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
             settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
+       <com.android.settings.preferences.EverestPreference
+           android:key="gesture_settings"
+           settings:position="middle"
+           android:icon="@drawable/ic_settings_gestures"
+           android:title="@string/aosp_gesture_preference"
+           android:summary="@string/aosp_gesture_summary"
+           android:fragment="com.android.settings.gestures.GestureSettings"
+           settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
+
         <lineageos.preference.LineagePartsPreference
             android:key="button_settings"
             settings:position="bottom"
