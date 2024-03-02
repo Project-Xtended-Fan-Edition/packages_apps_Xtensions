@@ -476,6 +476,7 @@
     <string name="status_bar_logo_position_right">Right</string>
     <string name="status_bar_logo_position_left">Left</string>
     <string name="status_bar_logo_style_title">Style</string>
+    <string name="status_bar_logo_style_xtended">Xtended</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
