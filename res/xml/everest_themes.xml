@@ -18,4 +18,43 @@
             android:summary="@string/settings_ui_summary"
             android:fragment="com.android.tweaks.categories.themes.Settings"/>
 
+    <PreferenceCategory
+        android:key="themes_fonts_category"
+        android:title="@string/themes_fonts_category">
+
+        <!-- System font -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.fonts"
+            settings:position="full"
+            android:icon="@drawable/ic_font"
+            android:title="@string/themes_system_font_title"
+            android:summary="@string/themes_system_font_summary"
+            android:fragment="com.android.tweaks.fragments.themes.Fonts"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="themes_icons_category"
+        android:title="@string/themes_icons_category">
+
+        <!-- System icons -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.icon_pack"
+            settings:position="top"
+            android:icon="@drawable/ic_drawing"
+            android:title="@string/themes_system_icons_title"
+            android:summary="@string/themes_system_icons_summary"
+            android:fragment="com.android.tweaks.fragments.themes.SystemIcons"/>
+
+        <!-- Icon shape -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.adaptive_icon_shape"
+            settings:position="bottom"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/theme_customization_icon_shape_title"
+            android:summary="@string/themes_icon_shape_summary"
+            android:fragment="com.android.tweaks.fragments.themes.IconShapes"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
