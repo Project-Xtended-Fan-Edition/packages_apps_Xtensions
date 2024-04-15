@@ -76,11 +76,20 @@
         <!-- Navigation bar icons -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.navbar"
-            settings:position="bottom"
+            settings:position="middle"
             android:icon="@drawable/ic_navbar"
             android:title="@string/themes_navigation_bar_icons_title"
             android:summary="@string/themes_navigation_bar_icons_summary"
             android:fragment="com.android.tweaks.fragments.themes.NavigationBarIcons"/>
+
+        <!-- Lock screen clock font -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.lockscreen_clock_font"
+            settings:position="bottom"
+            android:icon="@drawable/ic_font"
+            android:title="@string/themes_lock_screen_clock_font_title"
+            android:summary="@string/themes_lock_screen_clock_font_summary"
+            android:fragment="com.android.tweaks.fragments.themes.LockScreenClockFonts"/>
 
     </PreferenceCategory>
 
