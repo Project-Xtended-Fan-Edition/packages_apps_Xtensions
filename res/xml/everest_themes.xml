@@ -67,11 +67,20 @@
         <!-- Wifi icon -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.wifi_icon"
-            settings:position="bottom"
+            settings:position="middle"
             android:icon="@drawable/ic_wifi"
             android:title="@string/themes_wifi_icon_title"
             android:summary="@string/themes_wifi_icon_summary"
             android:fragment="com.android.tweaks.fragments.themes.WifiIcons"/>
+
+        <!-- Navigation bar icons -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.navbar"
+            settings:position="bottom"
+            android:icon="@drawable/ic_navbar"
+            android:title="@string/themes_navigation_bar_icons_title"
+            android:summary="@string/themes_navigation_bar_icons_summary"
+            android:fragment="com.android.tweaks.fragments.themes.NavigationBarIcons"/>
 
     </PreferenceCategory>
 
