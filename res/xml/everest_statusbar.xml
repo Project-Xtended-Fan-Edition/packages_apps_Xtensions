@@ -8,4 +8,20 @@
     android:title="@string/status_bar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="status_bar_icons_category"
+        android:title="@string/status_bar_icons_category">
+
+        <!-- Status bar tuner -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="status_bar_icons"
+            settings:position="full"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/status_bar_tuner_title"
+            android:summary="@string/status_bar_tuner_summary">
+                <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
+        </com.android.settings.preferences.EverestPreference>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
