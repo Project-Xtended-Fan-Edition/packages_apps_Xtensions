@@ -49,11 +49,29 @@
         <!-- Icon shape -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.adaptive_icon_shape"
-            settings:position="bottom"
+            settings:position="middle"
             android:icon="@drawable/ic_shapes"
             android:title="@string/theme_customization_icon_shape_title"
             android:summary="@string/themes_icon_shape_summary"
             android:fragment="com.android.tweaks.fragments.themes.IconShapes"/>
+
+        <!-- Signal icon -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.signal_icon"
+            settings:position="middle"
+            android:icon="@drawable/ic_signal"
+            android:title="@string/themes_signal_icon_title"
+            android:summary="@string/themes_signal_icon_summary"
+            android:fragment="com.android.tweaks.fragments.themes.SignalIcons"/>
+
+        <!-- Wifi icon -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.wifi_icon"
+            settings:position="bottom"
+            android:icon="@drawable/ic_wifi"
+            android:title="@string/themes_wifi_icon_title"
+            android:summary="@string/themes_wifi_icon_summary"
+            android:fragment="com.android.tweaks.fragments.themes.WifiIcons"/>
 
     </PreferenceCategory>
 
