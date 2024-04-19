@@ -7,5 +7,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    
+    <PreferenceCategory
+        android:key="lock_screen_interface_category"
+        android:title="@string/lock_screen_interface_category">
 
+        <!-- Charging stats -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            settings:position="full"
+            android:icon="@drawable/ic_battery_charging"
+            android:title="@string/lock_screen_charging_stats_title"
+            android:summary="@string/lock_screen_charging_stats_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
 </PreferenceScreen>
