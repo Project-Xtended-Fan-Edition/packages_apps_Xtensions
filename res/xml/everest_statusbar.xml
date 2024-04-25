@@ -15,12 +15,21 @@
         <!-- Status bar tuner -->
         <com.android.settings.preferences.EverestPreference
             android:key="status_bar_icons"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_shapes"
             android:title="@string/status_bar_tuner_title"
             android:summary="@string/status_bar_tuner_summary">
                 <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </com.android.settings.preferences.EverestPreference>
+
+        <!-- Colored icons -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_colored_icons"
+            settings:position="bottom"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/status_bar_colored_icons_title"
+            android:summary="@string/status_bar_colored_icons_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
