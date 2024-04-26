@@ -50,6 +50,18 @@
         <com.android.settingslib.widget.LayoutPreference
             android:layout="@layout/x_settings_divider" />
 
+        <!-- Buttons -->
+        <Preference
+            android:key="buttons_category"
+            android:title="@string/button_title"
+            android:fragment="com.android.tweaks.fragments.buttons.Buttons"
+            android:summary="@string/button_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_buttons"/>
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
         <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
