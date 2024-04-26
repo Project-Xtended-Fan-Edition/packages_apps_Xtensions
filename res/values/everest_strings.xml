@@ -327,4 +327,8 @@
     <string name="more_themed_icons_title">More themed icons</string>
     <string name="more_themed_icons_summary">Extends support for dynamic color themed icons for installed apps.</string>
 
+    <!-- Floating clear all -->
+    <string name="quick_settings_interface_category">Interface</string>
+    <string name="quick_settings_floating_clear_all_title">Floating clear all button</string>
+    <string name="quick_settings_floating_clear_all_summary">Replace the \'clear all\' text button with a bottom-centered floating one</string>
 </resources>

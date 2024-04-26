@@ -53,6 +53,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="quick_settings_interface_category"
+        android:title="@string/quick_settings_interface_category">
+
+        <!-- Floating clear all -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_material_dismiss"
+            settings:position="full"
+            android:icon="@drawable/ic_notification_clear_all"
+            android:title="@string/quick_settings_floating_clear_all_title"
+            android:summary="@string/quick_settings_floating_clear_all_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="quick_settings_lock_screen_category"
         android:title="@string/quick_settings_lock_screen_category">
 
