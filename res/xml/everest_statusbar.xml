@@ -40,6 +40,15 @@
             android:summary="@string/status_bar_colored_icons_summary"
             android:defaultValue="false" />
 
+        <!-- Network traffic -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="network_traffic_settings"
+            settings:position="middle"
+            android:icon="@drawable/ic_traffic"
+            android:title="@string/status_bar_network_traffic_settings_title"
+            android:summary="@string/status_bar_network_traffic_settings_summary"
+            android:fragment="com.android.tweaks.fragments.statusbar.NetworkTrafficSettings" />
+
         <!-- Notification counter -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="statusbar_notif_count"
