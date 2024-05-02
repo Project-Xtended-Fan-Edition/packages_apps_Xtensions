@@ -12,10 +12,19 @@
         android:key="power_menu_category"
         android:title="@string/power_menu_category">
 
+        <!-- Power menu actions -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="power_menu_actions"
+            settings:position="top"
+            android:icon="@drawable/ic_power"
+            android:title="@string/power_menu_actions_title"
+            android:summary="@string/power_menu_actions_summary"
+            android:fragment="com.android.tweaks.fragments.powermenu.PowerMenuActions" />
+
         <!-- Secure lock screen power menu -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_enable_power_menu"
-            settings:position="full"
+            settings:position="bottom"
             android:icon="@drawable/ic_power"
             android:title="@string/power_menu_lock_screen_secure_title"
             android:summary="@string/power_menu_lock_screen_secure_summary"
