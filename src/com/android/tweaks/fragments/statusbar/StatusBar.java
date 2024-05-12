@@ -39,6 +39,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String KEY_ICONS_CATEGORY = "status_bar_icons_category";
     private static final String KEY_BLUETOOTH_BATTERY_STATUS = "bluetooth_show_battery";
+    private static final String KEY_DATA_DISABLED_ICON = "data_disabled_icon";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -49,6 +50,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private PreferenceCategory mIconsCategory;
     private SystemSettingSwitchPreference mBluetoothBatteryStatus;
+    private SystemSettingSwitchPreference mDataDisabledIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         mIconsCategory = (PreferenceCategory) findPreference(KEY_ICONS_CATEGORY);
         mBluetoothBatteryStatus = (SystemSettingSwitchPreference) findPreference(KEY_BLUETOOTH_BATTERY_STATUS);
+        mDataDisabledIcon = (SystemSettingSwitchPreference) findPreference(KEY_DATA_DISABLED_ICON);
 
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
             mQuickPulldown.setEntries(R.array.status_bar_quick_pull_down_entries_rtl);
@@ -76,6 +79,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         if (!DeviceUtils.deviceSupportsBluetooth(context)) {
             mIconsCategory.removePreference(mBluetoothBatteryStatus);
         }
+
+        if (!DeviceUtils.deviceSupportsMobileData(context)) {
+            mIconsCategory.removePreference(mDataDisabledIcon);
+        }
+
     }
 
     @Override

@@ -408,4 +408,8 @@
     <string name="power_menu_actions_logout_title">Logout</string>
     <string name="power_menu_actions_emergency_title">Emergency</string>
     <string name="power_menu_actions_devicecontrols_title">Device controls</string>
+
+    <!-- Data disabled icon -->
+    <string name="status_bar_data_disabled_icon_title">Data disabled indicator</string>
+    <string name="status_bar_data_disabled_icon_summary">Display an indicator next to signal icon when data is disabled</string>
 </resources>
