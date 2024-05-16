@@ -73,12 +73,20 @@
         <!-- Hide on secure lock screen -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="secure_lockscreen_qs_disabled"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_lock_alert"
             android:title="@string/quick_settings_secure_lock_screen_title"
             android:summary="@string/quick_settings_secure_lock_screen_summary"
             android:defaultValue="false" />
 
+        <!-- Secure QS tiles require unlock -->
+        <com.android.settings.preferences.SecureSettingSwitchPreference
+            android:key="qstile_requires_unlocking"
+            settings:position="bottom"
+            android:icon="@drawable/ic_lock_alert"
+            android:title="@string/quick_settings_require_unlock_title"
+            android:summary="@string/quick_settings_require_unlock_summary"
+            android:defaultValue="true"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
