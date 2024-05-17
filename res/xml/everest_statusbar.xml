@@ -55,11 +55,19 @@
         <!-- Clock & date -->
         <com.android.settings.preferences.EverestPreference
             android:key="clock"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_calendar"
             android:title="@string/status_bar_clock_and_date_title"
             android:summary="@string/status_bar_clock_and_date_summary"
             android:fragment="com.android.tweaks.fragments.statusbar.Clock" />
+
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_clock_chip"
+            settings:position="bottom"
+            android:icon="@drawable/ic_tweaks_statusbar"
+            android:title="@string/status_bar_clock_chip_title"
+            android:summary="@string/status_bar_clock_chip_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
