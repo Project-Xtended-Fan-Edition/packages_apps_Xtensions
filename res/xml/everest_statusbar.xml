@@ -71,4 +71,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/statusbar_battery">
+
+        <com.android.settings.preferences.EverestPreference
+            android:key="sbbatteryicons"
+            settings:position="full"
+            android:icon="@drawable/ic_battery"
+            android:title="@string/status_bar_battery_style_title"
+            android:summary="@string/status_bar_battery_style_summary"
+            android:fragment="com.android.tweaks.fragments.BatteryStyleSettings" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
