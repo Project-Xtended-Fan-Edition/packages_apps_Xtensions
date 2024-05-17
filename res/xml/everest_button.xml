@@ -52,5 +52,19 @@
             android:title="@string/navbar_invert_layout_title"
             android:summary="@string/navbar_invert_layout_summary"
             android:defaultValue="false" />
+
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/system_category">
+
+       <com.android.settings.preferences.SecureSettingSwitchPreference
+           android:key="volume_show_volume_percent"
+           settings:position="full"
+           android:icon="@drawable/ic_percent"
+           android:title="@string/volume_show_volume_percent_title"
+           android:summary="@string/volume_show_volume_percent_summary"
+           android:defaultValue="true"/>
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -515,4 +515,8 @@
     <string name="status_bar_logo_color_default">Default (White)</string>
     <string name="status_bar_logo_color_accent">Accent</string>
     <string name="status_bar_logo_color_custom">Custom</string>
+
+    <!-- Volume Row Percent -->
+    <string name="volume_show_volume_percent_title">Show Volume Row Percentage</string>
+    <string name="volume_show_volume_percent_summary">Show volume row progress percentage</string>
 </resources>
