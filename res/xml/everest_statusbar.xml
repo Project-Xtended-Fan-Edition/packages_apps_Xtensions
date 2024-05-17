@@ -76,12 +76,19 @@
 
         <com.android.settings.preferences.EverestPreference
             android:key="sbbatteryicons"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_battery"
             android:title="@string/status_bar_battery_style_title"
             android:summary="@string/status_bar_battery_style_summary"
             android:fragment="com.android.tweaks.fragments.BatteryStyleSettings" />
 
+        <!-- Battery bar -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="battery_bar"
+            settings:position="bottom"
+            android:icon="@drawable/ic_car_battery"
+            android:title="@string/status_bar_battery_bar_title"
+            android:summary="@string/status_bar_battery_bar_summary"
+            android:fragment="com.android.tweaks.fragments.statusbar.BatteryBar" />
     </PreferenceCategory>
-
 </PreferenceScreen>
