@@ -420,4 +420,8 @@
     <!-- Secure QS tiles require unlock -->
     <string name="quick_settings_require_unlock_title">Secure QS tiles require unlock</string>
     <string name="quick_settings_require_unlock_summary">The following quick settings require the device to be unlocked before you can interact with them:\nAirplane, Battery saver, Bluetooth, Cellular, Data saver, Hotspot, Internet, NFC, Rotation lock, and Wi-Fi</string>
+
+    <!-- Wi-Fi standard icon -->
+    <string name="status_bar_wifi_standard_icon_title">Wi-Fi standard</string>
+    <string name="status_bar_wifi_standard_icon_summary">Display Wi-Fi standard next the Wi-Fi icon</string>
 </resources>
