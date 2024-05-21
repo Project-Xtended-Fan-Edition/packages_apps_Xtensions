@@ -56,10 +56,19 @@
         android:key="quick_settings_interface_category"
         android:title="@string/quick_settings_interface_category">
 
+        <!-- Data usage -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_show_data_usage"
+            settings:position="top"
+            android:icon="@drawable/ic_swap_vertical"
+            android:title="@string/quick_settings_data_usage_title"
+            android:summary="@string/quick_settings_data_usage_summary"
+            android:defaultValue="false" />
+
         <!-- Floating clear all -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"
-            settings:position="full"
+            settings:position="bottom"
             android:icon="@drawable/ic_notification_clear_all"
             android:title="@string/quick_settings_floating_clear_all_title"
             android:summary="@string/quick_settings_floating_clear_all_summary"
