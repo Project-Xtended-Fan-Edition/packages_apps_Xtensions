@@ -15,11 +15,30 @@
         <!-- Charging stats -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lock_screen_charging_stats_title"
             android:summary="@string/lock_screen_charging_stats_summary"
             android:defaultValue="true" />
+
+       <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_custom_notif"
+            android:icon="@drawable/ic_counter"
+            settings:position="middle"
+            android:title="@string/lockscreen_maxnotif_title"
+            android:summary="@string/lockscreen_maxnotif_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preferences.SystemSettingSeekBarPreference
+            android:key="lockscreen_max_notif_cofig"
+            settings:position="bottom"
+            android:icon="@drawable/ic_numbers"
+            android:title="@string/lockscreen_maxnotif_config"
+            android:max="6"
+            settings:min="1"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="lock_screen_custom_notif" />
     </PreferenceCategory>
 
     <PreferenceCategory
