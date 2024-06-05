@@ -105,11 +105,49 @@
         <!-- Floating clear all -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"
-            settings:position="bottom"
+            settings:position="middle"
             android:icon="@drawable/ic_notification_clear_all"
             android:title="@string/quick_settings_floating_clear_all_title"
             android:summary="@string/quick_settings_floating_clear_all_summary"
             android:defaultValue="false" />
+
+        <!-- Hide label -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_label_hide"
+            settings:position="middle"
+            android:icon="@drawable/ic_text"
+            android:title="@string/quick_settings_tile_label_hide_title"
+            android:summary="@string/quick_settings_tile_label_hide_summary"
+            android:defaultValue="false" />
+
+        <!-- Label text size -->
+        <com.android.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_tile_label_size"
+            settings:position="middle"
+            android:icon="@drawable/ic_text"
+            android:title="@string/quick_settings_tile_label_size_title"
+            android:max="15"
+            settings:min="10"
+            settings:interval="1"
+            settings:units="sp"
+            android:defaultValue="14" />
+
+        <!-- Vertical layout -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_vertical_layout"
+            settings:position="middle"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/quick_settings_tile_layout_title"
+            android:summary="@string/quick_settings_tile_layout_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preferences.EverestPreference
+            android:key="qs_layout_columns_rows"
+            settings:position="bottom"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/quick_settings_layout_columns_rows_title"
+            android:summary="@string/quick_settings_layout_columns_rows_summary"
+            android:fragment="com.android.tweaks.fragments.quicksettings.LayoutSettings" />
     </PreferenceCategory>
 
     <PreferenceCategory
