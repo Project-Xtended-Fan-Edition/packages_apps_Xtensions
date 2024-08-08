@@ -13,12 +13,20 @@
 
         <com.android.settings.preferences.EverestPreference
             android:key="gesture_system_navigation"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_settings_gestures"
             android:title="@string/system_navigation_title"
             android:summary="@string/system_navigation_summary"
             android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
             settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
+
+        <lineageos.preference.LineagePartsPreference
+            android:key="button_settings"
+            settings:position="bottom"
+            android:icon="@drawable/ic_tweaks_buttons"
+            android:title="@string/system_buttons_title"
+            android:summary="@string/system_buttons_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
