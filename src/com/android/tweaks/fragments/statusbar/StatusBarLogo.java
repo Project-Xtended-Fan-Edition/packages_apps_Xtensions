@@ -15,63 +15,106 @@
  */
 package com.android.tweaks.fragments.statusbar;
 
-import android.content.ContentResolver;
 import android.content.Context;
+import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.res.Resources;
-import android.database.ContentObserver;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
 
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.*;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
+
 import com.android.settings.R;
-import com.android.settings.Utils;
-import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.search.SearchIndexable;
+import com.android.settings.SettingsPreferenceFragment;
+
 import com.android.settings.preferences.SystemSettingListPreference;
 import com.android.settings.colorpicker.ColorPickerPreference;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@SearchIndexable
-public class StatusBarLogo extends DashboardFragment implements
-        Preference.OnPreferenceChangeListener {
+public class StatusBarLogo extends SettingsPreferenceFragment implements
+    Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "StatusBarLogo";
+    private static final String LOGO_COLOR = "status_bar_logo_color";
+    private static final String LOGO_COLOR_PICKER = "status_bar_logo_color_picker";
 
-    @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.Status_bar_logo;
-    }
+    private SystemSettingListPreference mLogoColor;
+    private ColorPickerPreference mLogoColorPicker;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        addPreferencesFromResource(R.xml.Status_bar_logo);
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        final Context context = getContext();
+        final ContentResolver resolver = context.getContentResolver();
+
+        mLogoColor = (SystemSettingListPreference) findPreference(LOGO_COLOR);
+        int logoColor = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO_COLOR, 0, UserHandle.USER_CURRENT);
+        mLogoColor.setValue(String.valueOf(logoColor));
+        mLogoColor.setSummary(mLogoColor.getEntry());
+        mLogoColor.setOnPreferenceChangeListener(this);
+
+        mLogoColorPicker = (ColorPickerPreference) findPreference(LOGO_COLOR_PICKER);
+        int logoColorPicker = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_LOGO_COLOR_PICKER, 0xFFFFFFFF);
+        mLogoColorPicker.setNewPreviewColor(logoColorPicker);
+        String logoColorPickerHex = String.format("#%08x", (0xFFFFFFFF & logoColorPicker));
+        if (logoColorPickerHex.equals("#ffffffff")) {
+            mLogoColorPicker.setSummary(R.string.default_string);
+        } else {
+            mLogoColorPicker.setSummary(logoColorPickerHex);
+        }
+        mLogoColorPicker.setOnPreferenceChangeListener(this);
+
+        updateColorPrefs(logoColor);
+
     }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final Context context = getContext();
+        final ContentResolver resolver = context.getContentResolver();
+
+        if (preference == mLogoColor) {
+            int logoColor = Integer.valueOf((String) newValue);
+            int index = mLogoColor.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUS_BAR_LOGO_COLOR, logoColor, UserHandle.USER_CURRENT);
+            mLogoColor.setSummary(mLogoColor.getEntries()[index]);
+            updateColorPrefs(logoColor);
+            return true;
+        } else if (preference == mLogoColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_LOGO_COLOR_PICKER, intHex);
+            return true;
+        }
         return false;
     }
+
+    private void updateColorPrefs(int logoColor) {
+        if (mLogoColor != null) {
+            mLogoColorPicker.setEnabled(logoColor == 2);
+        }
+    }
+
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVEREST;
+        return MetricsProto.MetricsEvent.EVEREST;
     }
-    @Override
-    protected String getLogTag() {
-        return TAG;
-    }
-    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.Status_bar_logo);
 }
