@@ -40,6 +40,14 @@
             android:summary="@string/status_bar_4g_icon_summary"
             android:defaultValue="false" />
 
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_show_carrier"
+            settings:position="middle"
+            android:icon="@drawable/ic_sim_outline"
+            android:title="@string/status_bar_carrier_lock_screen_title"
+            android:summary="@string/status_bar_carrier_lock_screen_summary"
+            android:defaultValue="true" />
+
         <!-- Wi-Fi standard icon -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="wifi_standard_icon"

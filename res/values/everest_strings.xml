@@ -311,6 +311,8 @@
     <string name="status_bar_location_privacy_indicator_summary">Display an indicator when an app accesses your location</string>
     <string name="status_bar_projection_privacy_indicator_title">Screen projection</string>
     <string name="status_bar_projection_privacy_indicator_summary">Display an indicator when the screen is being projected</string>
+    <string name="status_bar_carrier_lock_screen_title">Carrier name on lockscreen</string>
+    <string name="status_bar_carrier_lock_screen_summary">Display carrier name on lockscreen status bar</string>
 
     <!-- Hide on secure lock screen -->
     <string name="quick_settings_secure_lock_screen_title">Hide on secure lock screen</string>
