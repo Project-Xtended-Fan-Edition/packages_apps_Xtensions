@@ -121,10 +121,19 @@
         <!-- Bluetooth auto on -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_bt_auto_on"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_bt"
             android:title="@string/quick_settings_bluetooth_auto_on_title"
             android:summary="@string/quick_settings_bluetooth_auto_on_summary"
             android:defaultValue="false" />
+
+        <!-- QS Media Player  -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_compact_media_player_mode"
+            settings:position="bottom"
+            android:icon="@drawable/ic_media_compact"
+            android:title="@string/qs_compact_media_player_mode_title"
+            android:summary="@string/qs_compact_media_player_mode_summary"
+            android:defaultValue="false"  />
     </PreferenceCategory>
 </PreferenceScreen>
