@@ -558,4 +558,8 @@
     <string name="notif_panel_maxnotif_title">Notif. Panel notification count</string>
     <string name="notif_panel_maxnotif_summary">Enable adjustment of max Notif. Panel notifications</string>
     <string name="notif_panel_maxnotif_config">Max Notif. Panel notifications</string>
+
+    <!-- Volume Haptic feedback -->
+    <string name="haptic_feedback_category">Haptic Feedback Settings</string>
+    <string name="volume_panel_haptic_feedback_title">Vibrate on changing volume</string>
 </resources>
