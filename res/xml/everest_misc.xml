@@ -12,10 +12,19 @@
     <PreferenceCategory
         android:title="@string/general_category">
 
+        <!-- Hide applist -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="hide_applist_setting"
+            settings:position="top"
+            android:icon="@drawable/ic_hide"
+            android:title="@string/hide_applist_title"
+            android:summary="@string/hide_applist_summary"
+            android:fragment="com.android.tweaks.fragments.miscellaneous.HideAppListSettings" />
+
         <!-- Smart Pixels -->
         <com.android.settings.preferences.EverestPreference
             android:key="smart_pixels"
-            settings:position="top"
+            settings:position="middle"
             android:icon="@drawable/ic_smart_pixels"
             android:title="@string/smart_pixels_title" 
             android:summary="@string/smart_pixels_summary" 
