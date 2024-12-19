@@ -594,4 +594,12 @@
     <string name="outline_style">Outline style</string>
     <string name="shaded_layer_style">Shaded Layer style</string>
     <string name="volume_style_title">Volume panel styles</string>
+
+    <!-- Notifications -->
+    <string name="notifications_heads_up_title">Heads up</string>
+    <string name="notifications_heads_up_summary">Allow pop up notifications</string>
+
+    <!-- Notifications/Less boring heads up -->
+    <string name="notifications_less_boring_heads_up_title">Less boring</string>
+    <string name="notifications_less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
 </resources>
