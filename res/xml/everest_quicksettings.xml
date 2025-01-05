@@ -73,6 +73,14 @@
             android:summary="@string/quick_settings_data_usage_summary"
             android:defaultValue="false" />
 
+        <!-- Better Landscape QS (EXPERIMENTAL) -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_split_shade_enabled"
+            settings:position="middle"
+            android:title="@string/qs_split_shade_enabled_title"
+            android:summary="@string/qs_split_shade_enabled_summary"
+            android:defaultValue="false" />
+
         <!-- Floating clear all -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"

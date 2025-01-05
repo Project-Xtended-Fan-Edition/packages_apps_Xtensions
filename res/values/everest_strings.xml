@@ -562,4 +562,8 @@
     <!-- Volume Haptic feedback -->
     <string name="haptic_feedback_category">Haptic Feedback Settings</string>
     <string name="volume_panel_haptic_feedback_title">Vibrate on changing volume</string>
+
+    <!-- Split Shade -->
+    <string name="qs_split_shade_enabled_title">Better Landscape QS</string>
+    <string name="qs_split_shade_enabled_summary">Enable new experimental split shade quicksettings,\nbreaks landscape headsup notifications</string>
 </resources>
