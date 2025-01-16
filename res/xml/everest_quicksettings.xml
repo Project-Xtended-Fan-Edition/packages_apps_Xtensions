@@ -77,8 +77,18 @@
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_split_shade_enabled"
             settings:position="middle"
+            android:icon="@drawable/ic_battery"
             android:title="@string/qs_split_shade_enabled_title"
             android:summary="@string/qs_split_shade_enabled_summary"
+            android:defaultValue="false" />
+
+        <!-- Notification Styles -->      
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_style"
+            settings:position="middle"
+            android:icon="@drawable/ic_notification"
+            android:title="@string/notif_style_title"
+            android:summary="@string/notif_style_summary"
             android:defaultValue="false" />
 
         <!-- Floating clear all -->

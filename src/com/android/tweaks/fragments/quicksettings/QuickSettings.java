@@ -31,6 +31,7 @@ import java.util.List;
 import lineageos.preference.LineageSecureSettingSwitchPreference;
 import lineageos.providers.LineageSettings;
 
+import com.android.internal.util.everest.ThemeUtils;
 import com.android.settings.preferences.SystemSettingSwitchPreference;
 import com.android.tweaks.utils.DeviceUtils;
 
@@ -47,6 +48,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_BLUETOOTH_SHOW_DIALOG = "qs_bt_show_dialog";
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
+    private static final String KEY_NOTIF_STYLE = "notification_style";
 
     private PreferenceCategory mInterfaceCategory;
     private PreferenceCategory mMiscellaneousCategory;
@@ -55,8 +57,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private LineageSecureSettingSwitchPreference mShowAutoBrightness;
     private SystemSettingSwitchPreference mBrightnessSliderHaptic;
     private Preference mSplitShadePref;
+    private Preference  mNotificationStyleSwitch;
+
+    private  static ThemeUtils mThemeUtils;
 
     private  ThemeUtils mThemeUtils_split;
+
+    private  ThemeUtils mThemeUtils_noti;
 
     private Handler mHandler = new Handler();
 
@@ -69,6 +76,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = context.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources resources = context.getResources();
+
+        mNotificationStyleSwitch = (Preference) findPreference("notification_style");
+        mNotificationStyleSwitch.setOnPreferenceChangeListener(this);
 
         mSplitShadePref = (Preference) findPreference("qs_split_shade_enabled");
         mSplitShadePref.setOnPreferenceChangeListener(this);
@@ -117,7 +127,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 "qs_split_shade_enabled", value, UserHandle.USER_CURRENT);
             updateSplitShadeEnabled(getActivity());
             return true;
-         }
+        } else if (preference == mNotificationStyleSwitch ) {
+                int value = (boolean) newValue ? 1 : 0;
+                Settings.System.putIntForUser(resolver,
+                    "notification_style", value, UserHandle.USER_CURRENT);
+                    updateNotifStyle(getActivity());
+                return true;
+        }
         return false;
     }
 
@@ -138,6 +154,33 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 mThemeUtils_split.setOverlayEnabled(splitShadeStyleCategory, overlayThemePackage, overlayThemeTarget);
             }
         }, 1250);
+    }
+
+    private void updateNotifStyle(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+        // Fetch the current notification style setting
+        boolean enableStyle = Settings.System.getIntForUser(
+                resolver,
+                "notification_style",
+                0,
+                UserHandle.USER_CURRENT
+        ) == 1;
+        String notifStyleCategory = "android.theme.customization.notification";
+        String overlayThemeTarget = "com.android.systemui";
+        String overlayPackage = null;
+        if (mThemeUtils_noti == null) {
+                mThemeUtils_noti = new ThemeUtils(context);
+        }
+        // Apply the style
+        if (enableStyle) {
+            overlayPackage = "com.android.theme.notification.fluid";
+        }
+        // Apply or reset the overlay
+        mThemeUtils_noti.setOverlayEnabled(
+                notifStyleCategory,
+                overlayPackage != null ? overlayPackage : overlayThemeTarget,
+                overlayThemeTarget
+        );
     }
 
     @Override
