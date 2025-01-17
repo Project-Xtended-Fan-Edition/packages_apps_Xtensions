@@ -64,10 +64,19 @@
         android:key="quick_settings_interface_category"
         android:title="@string/quick_settings_interface_category">
 
+        <!-- QS Header -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="qs_header_image"
+            settings:position="top"
+            android:icon="@drawable/ic_header"
+            android:title="@string/quick_settings_header_image_title"
+            android:summary="@string/quick_settings_header_image_summary"
+            android:fragment="com.android.tweaks.fragments.quicksettings.QsHeaderImageSettings" />
+
         <!-- Data usage -->
         <com.android.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_show_data_usage"
-            settings:position="top"
+            settings:position="middle"
             android:icon="@drawable/ic_swap_vertical"
             android:title="@string/quick_settings_data_usage_title"
             android:summary="@string/quick_settings_data_usage_summary"
