@@ -5,6 +5,7 @@
 
 package com.android.tweaks.fragments.notifications;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
@@ -24,6 +25,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.android.settings.preferences.SystemSettingSeekBarPreference;
+import com.android.settings.preferences.SystemSettingSwitchPreference;
 
 import java.util.List;
 
@@ -34,7 +36,11 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String TAG = "Notifications";
 
     private static final String NOTIF_PANEL_MAX_NOTIF_CONFIG = "notif_panel_max_notif_cofig";
+    private static final String KEY_ALERT_SLIDER_PREF = "alert_slider_notifications";
+    private static final String KEY_INTERFACE_CATEGORY = "notifications_interface_category";
 
+    private PreferenceCategory mInterfaceCategory;
+    private Preference mAlertSlider;
     private SystemSettingSeekBarPreference mMaxNotifPanelNotifConfig;
 
     @Override
@@ -42,16 +48,24 @@ public class Notifications extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.everest_notifications);
 
-        final Context context = getContext();
-        final ContentResolver resolver = context.getContentResolver();
+        final Context mContext = getActivity().getApplicationContext();
+        final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Resources resources = context.getResources();
+        final Resources res = mContext.getResources();
 
         mMaxNotifPanelNotifConfig = (SystemSettingSeekBarPreference) findPreference(NOTIF_PANEL_MAX_NOTIF_CONFIG);
         int nPconf = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIF_PANEL_MAX_NOTIF_CONFIG, 3);
         mMaxNotifPanelNotifConfig.setValue(nPconf);
         mMaxNotifPanelNotifConfig.setOnPreferenceChangeListener(this);
+
+        mAlertSlider = (SystemSettingSwitchPreference) findPreference(KEY_ALERT_SLIDER_PREF);
+        mInterfaceCategory = (PreferenceCategory) findPreference(KEY_INTERFACE_CATEGORY);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable) {
+            mInterfaceCategory.removePreference(mAlertSlider);
+        }
     }
 
     @Override
@@ -81,13 +95,17 @@ public class Notifications extends SettingsPreferenceFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-        new BaseSearchIndexProvider(R.xml.everest_notifications) {
+            new BaseSearchIndexProvider(R.xml.everest_notifications) {
 
-            @Override
-            public List<String> getNonIndexableKeys(Context context) {
-                List<String> keys = super.getNonIndexableKeys(context);
-                final Resources resources = context.getResources();
-                return keys;
-            }
-        };
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+                    boolean mAlertSliderAvailable = res.getBoolean(
+                            com.android.internal.R.bool.config_hasAlertSlider);
+                    if (!mAlertSliderAvailable)
+                        keys.add(KEY_ALERT_SLIDER_PREF);
+                    return keys;
+                }
+            };
 }
