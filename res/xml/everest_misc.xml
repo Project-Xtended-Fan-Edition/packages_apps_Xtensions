@@ -12,9 +12,18 @@
     <PreferenceCategory
         android:title="@string/general_category">
 
+        <!-- Smart Pixels -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="smart_pixels"
+            settings:position="top"
+            android:icon="@drawable/ic_smart_pixels"
+            android:title="@string/smart_pixels_title" 
+            android:summary="@string/smart_pixels_summary" 
+            android:fragment="com.android.tweaks.fragments.miscellaneous.SmartPixels" />
+
          <com.android.settings.preferences.EverestPreference
              android:key="hide_developer_status_settings"
-             settings:position="top"
+             settings:position="middle"
              android:icon="@drawable/ic_hide"
              android:title="@string/hide_developer_status_title"
              android:summary="@string/hide_developer_status_summary"
