@@ -6,10 +6,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App Title -->
-     <string name="x_settings_title">X-Tensions</string>
+    <string name="x_settings_title">X-Tensions</string>
 
     <!-- Dashboard cards Titles -->
     <string name="qs_panel_title">QS Panel</string>
+    <string name="buttons_title">Buttons</string>
     <string name="clockfaces_title">Clock Faces</string>
     <string name="fonts_title">Fonts</string>
     <string name="lockscreen_title">LockScreen</string>
@@ -18,7 +19,7 @@
     <string name="notifications_title">Notifications</string>
     <string name="misc_title">Misc</string>
     <string name="themes_title">Themes</string>
-    
+ 
     <!--Categories Summary-->
     <string name="button_summary">Customize your buttons</string>
     <string name="gestures_summary">Gestures Customizations</string>
