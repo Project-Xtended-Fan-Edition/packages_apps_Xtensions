@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 The EverestOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/x_settings_title" >
+
+        <!-- Xtensions Logo Header -->
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="xtensions_header"
+            android:layout="@layout/xtensions_header"
+            android:selectable="false"/>
+
+        <!-- Theme Room -->
+        <Preference
+            android:key="theme_category"
+            android:title="@string/themes_title"
+            android:fragment="com.android.tweaks.fragments.themes.Themes"
+            android:summary="@string/theme_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_themes"/>
+        
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
+        <!-- Status Bar -->
+        <Preference
+            android:key="statusbar_category"
+            android:title="@string/status_bar_title"
+            android:fragment="com.android.tweaks.fragments.statusbar.StatusBar"
+            android:summary="@string/statusbar_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_statusbar"/>
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
+        <!-- Quick Settings panel -->
+        <Preference
+            android:key="quicksettings_category"
+            android:title="@string/qs_panel_title"
+            android:fragment="com.android.tweaks.fragments.quicksettings.QuickSettings"
+            android:summary="@string/quicksettings_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_qs"/>
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
+        <!-- Lock Screen -->
+        <Preference
+            android:key="lockscreen_category"
+            android:title="@string/lockscreen_title" 
+            android:fragment="com.android.tweaks.fragments.lockscreen.LockScreen"
+            android:summary="@string/lockscreen_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_lock"/>
+
+         <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
+        <!-- Notifications -->
+        <Preference
+            android:key="notifications_category"
+            android:title="@string/notifications_title"
+            android:fragment="com.android.tweaks.fragments.notifications.Notifications"
+            android:summary="@string/notifications_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_notification"/>
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
+        <!-- system -->
+        <Preference
+            android:key="system_category"
+            android:title="@string/system_title" 
+            android:fragment="com.android.tweaks.fragments.system.System"
+            android:summary="@string/system_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_system"/>
+        
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+
+        <!-- Misc -->
+        <Preference
+            android:key="misc_category"
+            android:title="@string/misc_title" 
+            android:fragment="com.android.tweaks.fragments.miscellaneous.Miscellaneous"
+            android:summary="@string/misc_summary"
+            settings:layout="@layout/x_settings_card_layout"
+            android:icon="@drawable/ic_tweaks_misc"/>
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/x_settings_divider" />
+</PreferenceScreen>
