@@ -6,7 +6,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App Title -->
-    <string name="everest_title">Tweaks</string>
+     <string name="x_settings_title">X-Tensions</string>
 
     <!-- Dashboard cards Titles -->
     <string name="qs_panel_title">QS Panel</string>
