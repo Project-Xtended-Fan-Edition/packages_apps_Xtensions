@@ -9,4 +9,13 @@
     android:title="@string/themes_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
+        <!-- Settings UI -->
+	    <com.android.settings.preferences.EverestPreference
+            android:key="settings_ui"
+            settings:position="full"
+            android:icon="@drawable/ic_settings_ui"
+            android:title="@string/settings_ui_title"
+            android:summary="@string/settings_ui_summary"
+            android:fragment="com.android.tweaks.categories.themes.Settings"/>
+
 </PreferenceScreen>
