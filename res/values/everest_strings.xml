@@ -519,4 +519,10 @@
     <!-- Volume Row Percent -->
     <string name="volume_show_volume_percent_title">Show Volume Row Percentage</string>
     <string name="volume_show_volume_percent_summary">Show volume row progress percentage</string>
+
+    <!-- Hide developer status -->
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
+    <string name="hide_developer_status_title">Hide developer status</string>
+    <string name="hide_developer_status_summary">Hide developer status from apps</string>
 </resources>
