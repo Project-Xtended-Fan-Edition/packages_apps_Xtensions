@@ -67,7 +67,7 @@
            android:defaultValue="true"/>
 
         <com.android.settings.preferences.SystemSettingSwitchPreference
-            android:key="volume_panel_haptic_feedback"
+            android:key="haptic_on_slider"
             settings:position="bottom"
             android:icon="@drawable/ic_vibrate"
             android:title="@string/volume_panel_haptic_feedback_title"
