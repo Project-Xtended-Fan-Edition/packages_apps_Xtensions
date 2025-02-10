@@ -80,4 +80,46 @@
             android:summary="@string/lock_screen_fingerprint_error_vibration_summary"
             android:defaultValue="true" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_weather_category"
+        android:title="@string/lockscreen_weather_category">
+
+        <com.android.settings.preferences.EverestPreference
+            android:title="@string/weather_settings_title"
+            settings:position="top"
+            android:icon="@drawable/ic_weather_settings"
+            android:summary="@string/weather_settings_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.omnijaws"
+                android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
+        </com.android.settings.preferences.EverestPreference>
+
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_enabled"
+            settings:position="middle"
+            android:icon="@drawable/ic_weather"
+            android:title="@string/lockscreen_weather_title"
+            android:summary="@string/lockscreen_weather_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_location"
+            settings:position="middle"
+            android:icon="@drawable/ic_map_marker"
+            android:title="@string/lockscreen_weather_location_title"
+            android:summary="@string/lockscreen_weather_location_summary"    
+            android:defaultValue="false"
+            android:dependency="lockscreen_weather_enabled" />
+
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_text"
+            settings:position="bottom"
+            android:icon="@drawable/ic_weather_condition"
+            android:title="@string/lockscreen_weather_text_title"
+            android:summary="@string/lockscreen_weather_text_summary"
+            android:defaultValue="true"
+            android:dependency="lockscreen_weather_enabled" />
+    </PreferenceCategory>
 </PreferenceScreen>
