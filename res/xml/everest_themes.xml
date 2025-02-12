@@ -9,33 +9,42 @@
     android:title="@string/themes_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
+        <PreferenceCategory
+            android:key="themes_fonts_category"
+            android:title="@string/themes_fonts_category">
+
         <!-- Settings UI -->
 	    <com.android.settings.preferences.EverestPreference
             android:key="settings_ui"
-            settings:position="full"
+            settings:position="top"
             android:icon="@drawable/ic_settings_ui"
             android:title="@string/settings_ui_title"
             android:summary="@string/settings_ui_summary"
             android:fragment="com.android.tweaks.categories.themes.Settings"/>
 
-    <PreferenceCategory
-        android:key="themes_fonts_category"
-        android:title="@string/themes_fonts_category">
-
         <!-- System font -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.fonts"
-            settings:position="full"
+            settings:position="middle"
             android:icon="@drawable/ic_font"
             android:title="@string/themes_system_font_title"
             android:summary="@string/themes_system_font_summary"
             android:fragment="com.android.tweaks.fragments.themes.fonts.FontPickerPreview"/>
 
-    </PreferenceCategory>
+        <!-- Lock screen clock font -->
+        <com.android.settings.preferences.EverestPreference
+            android:key="android.theme.customization.lockscreen_clock_font"
+            settings:position="bottom"
+            android:icon="@drawable/ic_font"
+            android:title="@string/themes_lock_screen_clock_font_title"
+            android:summary="@string/themes_lock_screen_clock_font_summary"
+            android:fragment="com.android.tweaks.fragments.themes.LockScreenClockFonts"/>
 
-    <PreferenceCategory
-        android:key="themes_icons_category"
-        android:title="@string/themes_icons_category">
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="themes_icons_category"
+            android:title="@string/themes_icons_category">
 
         <!-- System icons -->
         <com.android.settings.preferences.EverestPreference
@@ -67,7 +76,7 @@
         <!-- Wifi icon -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.wifi_icon"
-            settings:position="middle"
+            settings:position="bottom"
             android:icon="@drawable/ic_wifi"
             android:title="@string/themes_wifi_icon_title"
             android:summary="@string/themes_wifi_icon_summary"
@@ -76,21 +85,12 @@
         <!-- Navigation bar icons -->
         <com.android.settings.preferences.EverestPreference
             android:key="android.theme.customization.navbar"
-            settings:position="middle"
+            settings:position="bottom"
             android:icon="@drawable/ic_navbar"
             android:title="@string/themes_navigation_bar_icons_title"
             android:summary="@string/themes_navigation_bar_icons_summary"
             android:fragment="com.android.tweaks.fragments.themes.NavigationBarIcons"/>
 
-        <!-- Lock screen clock font -->
-        <com.android.settings.preferences.EverestPreference
-            android:key="android.theme.customization.lockscreen_clock_font"
-            settings:position="bottom"
-            android:icon="@drawable/ic_font"
-            android:title="@string/themes_lock_screen_clock_font_title"
-            android:summary="@string/themes_lock_screen_clock_font_summary"
-            android:fragment="com.android.tweaks.fragments.themes.LockScreenClockFonts"/>
-
-    </PreferenceCategory>
+        </PreferenceCategory>
 
 </PreferenceScreen>

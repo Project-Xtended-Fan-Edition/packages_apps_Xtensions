@@ -24,6 +24,7 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.List;
 
 import com.android.tweaks.utils.DeviceUtils;
+import com.android.settings.preferences.EverestPreference;
 
 @SearchIndexable
 public class Themes extends SettingsPreferenceFragment implements
@@ -36,8 +37,8 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String KEY_SIGNAL_ICON = "android.theme.customization.signal_icon";
 
     private PreferenceCategory mIconsCategory;
-    private Preference mNavbarIcon;
-    private Preference mSignalIcon;
+    private EverestPreference mNavbarIcon;
+    private EverestPreference mSignalIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,8 +51,8 @@ public class Themes extends SettingsPreferenceFragment implements
         final Resources resources = context.getResources();
 
         mIconsCategory = (PreferenceCategory) findPreference(KEY_ICONS_CATEGORY);
-        mNavbarIcon = (Preference) findPreference(KEY_NAVBAR_ICON);
-        mSignalIcon = (Preference) findPreference(KEY_SIGNAL_ICON);
+        mNavbarIcon = (EverestPreference) findPreference(KEY_NAVBAR_ICON);
+        mSignalIcon = (EverestPreference) findPreference(KEY_SIGNAL_ICON);
 
         if (!DeviceUtils.deviceSupportsMobileData(context)) {
             mIconsCategory.removePreference(mSignalIcon);
